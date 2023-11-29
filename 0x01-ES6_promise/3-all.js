@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { uploadPhoto, createUser } from '../utils.js'
+import { uploadPhoto, createUser } from './utils'
 
 export default function handleProfileSignup() {
   let myPromises = Promise.all([uploadPhoto(), createUser()]);
