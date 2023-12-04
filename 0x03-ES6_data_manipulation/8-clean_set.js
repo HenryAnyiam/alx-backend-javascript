@@ -2,16 +2,15 @@
 export default function cleanSet(set, startString) {
   if(set instanceof Set && typeof startString === 'string') {
     const length = startString.length;
-    let finalString = '';
+    let final = [];
     if (length == 0) {
-      return finalString;
+      return final.join('-');
     }
     for (let i of set) {
-      let start = i.slice(0, length);
-      if (start === startString) {
-        finalString = finalString.concat('-', i.slice(length));
+      if (i && i.startsWith(startString)) {
+        final.push(i.slice(length));
       }
     }
-    return finalString.slice(1); 
+    return final.join('-'); 
   }
 }
