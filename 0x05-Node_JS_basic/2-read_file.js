@@ -27,7 +27,7 @@ function countStudents(path) {
     console.log("Number of students:", data.length - 1);
     for (let i in fields) {
       if (i) {
-      	console.log(`Number of students in ${i.toUpperCase()}: ${fields[i].length}. LIST: ${fields[i].join(', ')}`);
+      	console.log(`Number of students in ${i.toUpperCase()}: ${fields[i].length}. List: ${fields[i].join(', ')}`);
       }
     }
   } catch(err) {
