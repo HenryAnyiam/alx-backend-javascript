@@ -4,7 +4,7 @@ const fs = require('fs');
 function countStudents(path) {
   try {
     let data = fs.readFileSync(path, 'utf-8');
-    data = data.trim();
+    data = data.toString().trim();
     data = data.split('\n');
     let new_data = [];
     for (let i = 0; i < data.length; i++) {
@@ -27,7 +27,9 @@ function countStudents(path) {
     console.log("Number of students:", data.length - 1);
     for (let i in fields) {
       if (i) {
-      	console.log(`Number of students in ${i.toUpperCase()}: ${fields[i].length}. List: ${fields[i].join(', ')}`);
+	let stu = fields[i].join(', ');
+	let len = fields[i].length
+      	console.log(`Number of students in ${i}: ${len}. List: ${stu}`);
       }
     }
   } catch(err) {
